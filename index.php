@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">     
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <link href="css\css2024.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/PORTCORPMARKOS.png" />       
+        <script type="text/javascript" src="js/obtenerproductos.js"></script>
+        <script type="text/javascript" src="js/obtenermarcas.js"></script>
+        <script>
+            if(window.history.replaceState){
+            window.history.replaceState(null, null, window.location.href);}
+        </script>
+        <style>
+            #productodestacado{
+                background-color: #4ec3da; 
+                padding:10px;
+            }
+            #productodestacado:hover{
+                padding:5px;
+                background-color:#4ec3da;
+                text-decoration:none;
+            }
+            .product2{
+                padding:15px;
+            }
+            .product2:hover{
+            padding:5px;
+            }
+            .imagenport{
+                width:100%;
+                box-shadow:0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+            }
+            .imagenport::before{
+                background: rgba(f, f, f, 0.5);
+                box-shadow:0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+            }
+            .div{         
+            display: block;
+            margin: 20px 0;
+            }
+            .banner {   
+                opacity: 0; /* Inicialmente transparente*/
+                transition: transform 2.0s ease, opacity 0.5s ease;
+            }           
+            .lateral {
+            transform: translateX(-100%); 
+            }        
+            .aparecer {
+                transform: translateX(0); /* Muestra el banner movi茅ndolo hacia la posici贸n deseada */
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="header" class="w-100"></div>
+    <script>
+        fetch('padre/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+      <script src="js/seachproducto.js" type="text/javascript"></script>
+    <script src="js/cambiosinput.js" type="text/javascript"></script>
+     <div class="banner lateral" id="div1">
+        <div class="d-flex">
+            <div class=" w-100" > 
+                
+                <div class=" col-sm-12 w-100 m-auto" >
+                    <div class=" carousel-inner w-100 m-auto">
+                      <div class="carousel-item active" >
+                        <img class="img-fluid" src="assets\images\PORTCORPMARKOS.jpeg" loading="lazy" width="100%" height="100%" alt="portada" >
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+ <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            document.querySelector('.banner').classList.add('aparecer');
+        });
+    </script>
+    <br>
+    <div class="" id="div2">
+        <h5 class="pt-2 m-auto container" style="color:grey; text-align:center; font-size:14;">NUESTROS PROVEEDORES</h5>
+    </div>
+    <div class="w-100 m-auto ">
+        <div class="d-flex">
+            <div class=" w-100">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 m-auto">
+                    <div class=" m-auto p-2">
+                        <div class="swiper swiper1">
+                            <div class="swiper-wrapper" id="marca4">
+                            </div>
+                            <div class="swiper-button-prev swiper-button-prev1"></div>
+                            <div class="swiper-button-next swiper-button-next1"></div>
+                        </div>
+                        <script>
+                            var swiper1 = new Swiper('.swiper1', {
+                            spaceBetween: 10,
+                            loop: true,
+                            navigation: {
+                              nextEl: '.swiper-button-next1',
+                              prevEl: '.swiper-button-prev1',
+                            },
+                            autoplay: {
+                              delay: 5000,
+                            },
+                            breakpoints: {
+                              // when window width is >= 320px
+                              320: {
+                                slidesPerView: 2,
+                                spaceBetween: 20
+                              },
+                              // when window width is >= 480px
+                              480: {
+                                slidesPerView: 2,
+                                spaceBetween: 30
+                              },
+                              // when window width is >= 640px
+                              640: {
+                                slidesPerView: 3,
+                                spaceBetween: 40
+                              }
+                            }
+                            // Otros ajustes...
+                          });
+                        </script>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="w-100 m-auto " id="div3" style="border:1px solid red">
+        <div class="d-flex" style=" background-color:#4ec3da; text-align:center; ">
+            <div class=" w-100 p-3">
+                <div class="col-sm-2 w-100">
+                </div>
+                <div class="col-sm-8 m-auto w-100 p-3">
+                    <div class="" style=" background-color:#4ec3da; text-align:center; ">
+                        <div class="row">
+                            <div class="col-sm"></div>
+                            <div class="col-sm m-auto" > 
+                                <h2 class="p-1"  style="color:white; text-align:center; font-size:25;font-family:'Arial Narrow'">PRODUCTOS </BR> <strong>DESTACADOS</strong></h2>
+                            </div>                           
+                            <div class="col-sm"></div>                          
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 w-100"></div>
+            </div>
+        </div>
+    </div>
+    <div class="w-100 m-auto " id="div4">
+        <div class="d-flex" style=" background-color:#4ec3da; text-align:center; ">
+            <div class=" w-100 p-3">
+                <div class="col-sm-2 w-100">
+                </div>
+                <div class="col-sm-8 m-auto w-100 p-3">
+                    <div class="swiper swiper2"  style="background-color: #4ec3da;">
+                        <div class="swiper-wrapper" id="producto7" style="background-color: #4ec3da;">
+                        </div>      
+                    </div>              
+                    <div class="swiper-button-prev swiper-button-prev2"></div>
+                    <div class="swiper-button-next swiper-button-next2"></div>
+                </div>
+                <script>
+                    var swiper2 = new Swiper('.swiper2', {
+                        spaceBetween: 10,
+                        loop: true,
+                        navigation: {
+                            nextEl: '.swiper-button-next2',
+                            prevEl: '.swiper-button-prev2',
+                        },
+                        autoplay: {
+                            delay: 5000,
+                        },
+                        breakpoints: {
+                            // when window width is >= 320px
+                            320: {
+                              slidesPerView: 1,
+                              spaceBetween: 10
+                            },
+                            // when window width is >= 480px
+                            480: {
+                              slidesPerView: 2,
+                              spaceBetween: 10
+                            },
+                            // when window width is >= 640px
+                            640: {
+                              slidesPerView: 4,
+                              spaceBetween: 10
+                            }
+                        }
+                          // Otros ajustes...
+                    });
+                </script> 
+                <div class="col-sm-2 w-100"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+     
+    </script>
+    <div class="whatsapp" style="z-index:1; position: fixed;right:5px;bottom:5px;width:80px">
+        <a href="https://api.whatsapp.com/send?phone=51940168122">
+            <img src="assets\images\iconowhats.png" alt="logo" class="img-fluid" width="100px" height="100px">
+        </a>
+    </div>
+    <?php
+        include_once("procesar_suscripcion.php");
+    ?>
+    <div id="footer"></div>
+    <script>
+        fetch('padre/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+    </div>  
+    </body>
+</html>

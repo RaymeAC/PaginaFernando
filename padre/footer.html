@@ -1,0 +1,109 @@
+
+<link href="css\css2024.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+<footer>
+<div class="" style="margin-bottom:0;">
+    <div style="border-bottom:2px solid orange;background-color:black" >
+      <div class="container-lg">
+        <div class="row w-100 p-3 m-auto"  >
+          <div class="col-sm-3 text-center m-auto" style="">
+            <img class="logo2 m-auto img-fluid" src="assets/images/logoMarkos2.PNG" width="250" height="70">
+          </div>
+          <br>
+          <div class="col-sm-4 m-auto"  > 
+          <br>
+            <div id="" class="m-auto" style="border-left:2px solid gray; ">        
+              <p id="" class=" m-auto pl-3" style="font-family: 'Montserrat';color:white;text-align:left;font-size:10pt">Suscribete para recibir promociones y descuentos en todo articulo de pintura y renueva tu hogar, registrate con tu e-mail.</p>
+            </div>
+            <br>
+          </div>
+          <br>
+          <div class="col-sm-5 m-auto"  style="">
+                <form action="index.php" method="post" enctype="multipart/form-data">
+                    <div class="row m-auto">
+                      <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required style="color:grey;text-indent: 15px;width:80%;padding:10px; border:1px solid #3487b8;border-radius:20px 0px 0px 20px">
+                      <input name ="register" type="submit" value="Enviar" style="font-size:10pt;padding:5px; color:white;background-color: #0A4BB9; border:1px solid #0A4BB9;border-radius:0px 20px 20px 0px">
+                    </div>
+                    <div class="row m-auto" >
+                      <label for="estado" class="m-1" style="font-family: 'Montserrat';color:white">
+                        <input class="mt-1 p-1" type="checkbox" name="estado" value="OK" required> Acepto la Política de Datos Personales
+                      </label>
+                    </div>
+                </form>
+                <?php
+                    include_once("procesar_suscripcion.php");
+                ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="color:white;background-color:#2b2b2b; font-size: 10pt;">
+      <div class="container" style="font-family: 'Montserrat';">
+        <div class="row w-100">
+        <div class="col-sm pt-3" >
+          <h6><strong>Contáctanos</strong></h6>
+          
+          <a href="portwhatsapp.php" style="color:black;  text-decoration: underline;" class="logo3" ><img style="margin:3px;" width="25px" height="25px" src="https://cdn1.iconfinder.com/data/icons/bootstrap-fill-vol-2/16/messenger-128.png" alt="">Chatea con Nosotros</a>
+          <br>
+          <a href="portwhatsapp.php"  style="color:black; " class="logo3" ><img style="margin:3px;" width="25px" height="25px"  src="https://cdn0.iconfinder.com/data/icons/essentials-solid-glyphs-vol-1/100/Phone-Call-Telephone-128.png" alt=""><strong>Llámanos</strong></a>
+          
+          <p style="padding-left:30px">Venta por WhatsApp : 963 292 383 - 940 168 122<br>Centro de Servicio de atencion al cliente</p>  
+          <a  style="color:black; " class="logo3" ><img style="margin:3px;" width="25px" height="25px"  src="https://cdn1.iconfinder.com/data/icons/office-322/24/appointment-date-schedule-event-calendar-confirm-128.png" alt=""><strong>Atención</strong></a>
+          
+          <p style="padding-left:30px">De Lunes a Viernes,7:00 am a 9:00 pm y Sábado 7:00 am a 2:00 pm</p>
+          <a href="contacto.php"  style="color:black; " class="logo3" ><img style="margin:3px;" width="25px" height="25px"  src="https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/envelope-128.png" alt=""><strong>Escríbenos</strong></a>
+          
+          <p  style="padding-left:30px">fmarcoacosta@gmail.com</p>
+          <a href="tiendas.php"  style="color:black; " class="logo3" ><img style="margin:3px;" width="25px" height="25px"  src="https://cdn3.iconfinder.com/data/icons/shopping-28/32/storefront-128.png" alt=""><strong>Visítanos</strong></a>
+          
+          <p style="padding-left:30px; color:white"><a style="color:white" href="tiendas.php">Ver Tienda >></a></p>
+        </div>
+        <div class="col-sm pt-3"> 
+          <h6><strong>Secciones</strong></h6>
+
+          <a href="nosotros.php" style="color:white;padding-left:30px " class="">Nosotros</a>
+          <br>
+          <a href="producto.php" style="color:white;padding-left:30px " class="">Productos</a>
+          
+          <br>
+          <br>
+          <h6><strong>Atencion al cliente</strong></h6>
+          
+          <a href="contacto.php" style="color:white;padding-left:30px " class="">Contáctanos</a>
+          
+          <br>
+         
+        </div>
+        <div class="col-sm pt-3" >
+          <div class=" m-auto p-auto">
+            <h6><strong>Metodos de Pago</strong></h6>
+
+            <div class="row" style="padding-left:45px">
+                Tranferencia Bancaria Inmediata desde cualquier banco.
+            </div>
+          </div>
+        </div>
+        <div class="col-sm pt-3" >
+          <div class="m-auto">
+            <h6><strong>Nuestras Redes</strong></h6>
+
+            <div class="row" style="padding-left:30px">
+              <a href="https://www.facebook.com/CORP.MARKOS.SAC/" style="color:white; " class="logo4 pl-2"><img width="40px" height="40px"  src="https://cdn4.iconfinder.com/data/icons/social-icons-16/512/Facebook-64.png" alt=""></a>
+              <a href="https://www.tiktok.com/@ventadepinturas?is_from_webapp=1&sender_device=pc" style="color:white; " class="logo4 pl-2"><img width="40px" height="40px" src="https://cdn0.iconfinder.com/data/icons/logos-brands-7/512/TikTok_logo_app0-64.png" ></a>          
+              <a href="portwhatsapp.php" style="color:white; " class="logo4 pl-2"><img width="40px" height="40px" src="https://cdn2.iconfinder.com/data/icons/social-media-2421/512/WhatsApp-64.png" alt=""></a>          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div style="background-color: #272727;">
+        <p  class="m-auto p-3" style="font-family: 'Montserrat';font-size: 10pt; background-color: #272727; color:grey; text-align: center;">CORPORACION MARKOS S.A.C. © 2024. Todos los derechos reservados. </p>
+    </div>
+</footer>

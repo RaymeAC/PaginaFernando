@@ -1,0 +1,452 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style>
+
+ #menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+    justify-content: center;
+  
+}
+
+#menu ul li {
+  float: left;
+  position: relative;
+    text-align: center; 
+}
+
+#menu ul li a {
+  display: flex;
+  padding: 5px 5px;
+  text-decoration: none;
+ /* color: rgb(255, 255, 255);
+  font-size: 11pt;*/
+  align-items: center;
+}
+#menu ul li a ul li a{
+  
+  padding: 5px 5px;
+  text-decoration: none;
+/* color: rgb(0, 0, 0);*/
+  display: flex; 
+
+}
+#menu ul li:hover > a {
+ /* background-color: #4ec3da;*/
+  font-weight: bold;
+ /* color: #ffffff;*/
+
+}
+
+#menu ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 1000; /* Ajuste para que el submenú esté encima de todo */
+}
+.milinea{
+    color: #ffffff;
+}
+.milinea:hover{
+    background-color: #4ec3da;
+    font-weight: bold;
+    color: #ffffff;
+
+}
+.milinea2{
+    color: #929292;
+    font-size: 10pt;
+}
+.milinea2:hover{
+    background-color: #4ec3da;
+    font-weight: bold;
+    color: #ffffff;
+
+}
+#menu ul ul li {
+  float: left;
+  width: 100%;
+}
+
+#menu ul ul a {
+  padding: 5px 5px;
+  display: block;
+}
+
+#menu ul ul ul {
+  left: 100%;
+  top: 0;
+}
+
+#menu ul li:hover > ul {
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Estilos para dispositivos móviles */
+  #menu ul {
+    width: 100%;
+  }
+  #menu ul li {
+    width: 100%;
+    width: 96%;
+    left: 2%;
+  }
+ 
+  #menu ul ul {
+    display: none;
+    position: static;
+    top: auto;
+  }
+  #menu ul li:hover > ul {
+    display: block; /* Mostrar submenú al pasar el ratón sobre el elemento padre */
+ 
+  }
+  #btntog:focus {
+  outline: 2px solid white;
+  background-color:#4ec3da;
+}
+  }
+</style>
+<header>
+    <div class="w-100 d-md-block d-none" style="background-color:#e2e2e2;">
+        <div class="row w-100" >
+            <div class="col-sm-1" style="background-color:#e2e2e2;"></div>
+            <div class="col-sm-4 p-1" style="background-color:#e2e2e2; color:#636363 ; text-align: center;" >
+                <span >
+                    <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-256.png"  style="max-width:15px; color:blue">
+                </span>	
+                <a href="portwhatsapp.php" style="font-family: 'Montserrat';font-size: 9pt; color:black"> Envios a nivel nacional desde Lima </a>
+            </div>
+            <div class="col-sm-1" style="background-color:#e2e2e2; color:#636363;">	</div>
+            <div class="col-sm-5 p-1" style="background-color:#e2e2e2; color:#636363; text-align: center;">
+                <span >
+                    <img src="https://cdn2.iconfinder.com/data/icons/social-icons-color/512/whatsapp-128.png"  style=" max-width:20px; color:blue">
+                </span>	  
+                <a href="portwhatsapp.php" style="font-family: 'Montserrat';font-size: 9pt; color:black "> Ventas por WhatsApp: 940 168 122 - 963 292 383</a>
+            </div>
+        </div>
+    </div> 
+    <div class="row w-100" style="font-family: 'Montserrat';">
+        <div class="col-sm-2" style="background-color: white;"></div>
+        <div class="col-sm-8">
+            <div class="row w-100 m-auto" style="text-align:center; margin:auto;background-color: white;">
+                <div class="col-sm-3 w-100 d-flex" style="text-align:center;">  
+                    <a class="m-auto" href="index.php" >
+                        <img class="img-fluid m-auto" style="text-align:center; width:250px;" src="assets/images/logoMarkos2.jpg"  >
+                    </a>
+                </div>
+                <div class="col-sm-5 d-flex" style="text-align:center;"> 
+                    <div class="m-auto d-md-block d-none search-label w-100" id="searchlabel">                
+                        <input  type="text" name="searchInput" id="searchInput" oninput="searchProducts()" class="form-control search-input " style="border:1px solid #e2e2e2;background-color: #e2e2e2;border-radius:30px ;padding:5px;text-indent: 10px;" placeholder="Buscar productos ...">
+                        <span class="search-icon"  style="text-align: center;" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </span>
+                        <span class="w-100 ml-1" style="position: absolute;z-index: 3;  background-color: white; color:#000; " >
+                            <div id="searchResults" class="search-results " style="margin:2px;border-radius:25px"></div>
+                        </span>  
+                    </div>             
+                </div>     
+                <div class="col-sm-4 d-md-block" style="text-align:right;"> 
+                    <div class="row m-auto w-100 h-100">
+                        <div class="m-auto" style="text-align:center;">
+                            <div class="d-md-block d-none">
+                                <a class="" href="contacto.php"> 
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4ec3da" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                                </svg>
+                                <p class="m-auto" style="font-size: 12px;text-decoration: none;color:#4ec3da ">Contactos</p></a>                
+                            </div>                 
+                        </div>
+                        <div class="m-auto " style="text-align:center;">
+                            <div class="d-md-block d-none">
+                                <a href="portwhatsapp.php">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4ec3da" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                                </svg>  
+                                <p class="m-auto" style="font-size: 12px; text-decoration: none;color:#4ec3da">WhatsApp</p></a>
+                            </div>
+                        </div>
+                        <div class="m-auto" style="text-align:center;">
+                            <div class="d-md-block d-none">
+                                <a href="tiendas.php"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4ec3da" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                <p class="m-auto" style="font-size: 12px; text-decoration: none;color:#4ec3da">Tiendas</p></a> 
+                            </div>                               
+                        </div>
+                        <div class="m-auto p-1" style="text-align:center;">
+                            <div class="d-md-block d-none p-2" style=" border:2px solid #4ec3da; border-radius:25px">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4ec3da" class="bi bi-telephone" viewBox="0 0 16 16">
+                                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                                    </svg>
+                                </span>
+                                <a href="portwhatsapp.php" style="color:#4ec3da">940168122</a>
+                                <a href="portwhatsapp.php"><p class="m-auto" style="font-size: 7pt; text-decoration: none;color:#4ec3da"> Atencion al Cliente</p></a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2" style="background-color: white;"></div>    
+    <div style="font-family: 'Montserrat';background-color:#4ec3da; color:white">
+        <nav class="container navbar navbar-expand-sm " >
+            <button  class="navbar-toggler" id="btntog" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="background-color:#4ec3da;">
+                <span class="m-auto" > 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </span>
+            </button>
+            <div class="m-1 navbar-toggler" style="float:right;border-radius: 25px;padding:15px 15px ;border:2px solid white"> 
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                    </svg>
+                </span>
+                <a style="color:white" href="portwhatsapp.php">940 168 122</a>
+                <a href="portwhatsapp.php"><p class="m-auto" style="color:white;font-size: 12px; text-decoration: none;"> Atencion al Cliente</p></a>
+            </div>
+            <div class="m-1 navbar-toggler" style="text-align:center;">
+                <a style="color:white" href="tiendas.php"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                        <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>
+                    <p class="m-auto" style="color:white;font-size: 12px; text-decoration: none;">Tiendas</p>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse m-auto "  id="collapsibleNavbar" >
+                <div id="menu" class="m-auto " >
+                  <ul>
+                    <li>
+                        <a href="#" class="milinea">Decorativo 
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                            </svg>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" class="milinea2" style="display: flex; text-align: center;">Latex
+                                    <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg>
+                                </a>
+                                <ul class="milinea2">
+                                    <li><a href="producto.php?c6=Latex&c7=Qroma" class="milinea2">Qroma</a></li>
+                                    <li><a href="producto.php?c6=Latex&c7=Anypsa" class="milinea2">Anypsa</a></li>
+                                    <li><a href="producto.php?c6=Latex&c7=Tamsa" class="milinea2">Tamsa</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="milinea2" style="display: flex;">Bases de construccion
+                                    <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg>
+                                </a>
+                                <ul class="milinea2">
+                                    <li><a href="producto.php?c6=Bases de construccion&c7=Majestad" class="milinea2">Majestad</a></li>
+                                    <li><a href="producto.php?c6=Bases de construccion&c7=Qroma" class="milinea2">Qroma</a></li>
+                                    <li><a href="producto.php?c6=Bases de construccion&c7=Anypsa" class="milinea2">Anypsa</a></li>
+                                    <li><a href="producto.php?c6=Bases de construccion&c7=Chema" class="milinea2">Chema</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="milinea">Alquidicos <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg></a>
+                      <ul class="milinea2">
+                        <li ><a href="producto.php?c6=Alquidicos&c7=Qroma" class="milinea2">Qroma</a></li>
+                        <li><a href="producto.php?c6=Alquidicos&c7=Anypsa" class="milinea2">Anypsa</a></li>
+                        <li><a href="producto.php?c6=Alquidicos&c7=Felsa" class="milinea2">Felsa</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="milinea">Industrial <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg></a>
+                      <ul>
+                        <li><a href="#" style="display: flex;"  class="milinea2">Bases Industriales<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
+                        <ul class="milinea2">
+                          <li><a href="producto.php?c6=Bases Industriales&c7=Qroma" class="milinea2">Qroma</a></li>
+                          <li><a href="producto.php?c6=Bases Industriales&c7=Anypsa" class="milinea2">Anypsa</a></li>
+                          <li><a href="producto.php?c6=Bases Industriales&c7=Felsa" class="milinea2">Felsa</a></li>
+                        </ul>
+                      </li>
+                        <li><a href="producto.php?c6=Productos Industriales&c7=sin marca"  class="milinea2" style="display: flex;">Productos Industriales</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="milinea">Automotriz<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg></a>
+                      <ul class="milinea2">
+                        <li><a href="producto.php?c6=Automotriz&c7=Qroma" class="milinea2">Qroma</a></li>
+                        <li><a href="producto.php?c6=Automotriz&c7=Anypsa"class="milinea2">Anypsa</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="milinea">Piroxilina<svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg></a>
+                      <ul class="milinea2">
+                        <li><a href="producto.php?c6=Piroxilina&c7=Qroma" class="milinea2">Qroma</a></li>
+                        <li><a href="producto.php?c6=Piroxilina&c7=Anypsa" class="milinea2">Anypsa</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="milinea">Madera<svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg></a>
+                      <ul class="milinea2">
+                        <li><a href="producto.php?c6=Madera&c7=Qroma" class="milinea2">Qroma</a></li>
+                        <li><a href="producto.php?c6=Madera&c7=Anypsa" class="milinea2">Anypsa</a></li>
+                        <li><a href="producto.php?c6=Madera&c7=Felsa" class="milinea2">Felsa</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="milinea">Epoxica<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg></a>
+                      <ul class="milinea2">
+                        <li><a href="#" style="display: flex;"  class="milinea2">Bases Epoxica <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
+                          <ul class="milinea2">
+                            <li><a href="producto.php?c6=Bases Epoxica&c7=Qroma" class="milinea2">Qroma</a></li>
+                            <li><a href="producto.php?c6=Bases Epoxica&c7=Anypsa" class="milinea2">Anypsa</a></li>
+                            <li><a href="producto.php?c6=Bases Epoxica&c7=Aurora" class="milinea2">Aurora</a></li>
+                            <li><a href="producto.php?c6=Bases Epoxica&c7=Chemifabrik" class="milinea2">Chemifabrik</a></li>
+                            <li><a href="producto.php?c6=Bases Epoxica&c7=Interpaints" class="milinea2">Interpaints</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#" style="display: flex;"  class="milinea2">Linea Epoxica <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
+                          <ul class="milinea2">
+                            <li><a href="producto.php?c6=Linea Epoxica&c7=Qroma" class="milinea2">Qroma</a></li>
+                            <li><a href="producto.php?c6=Linea Epoxica&c7=Anypsa" class="milinea2">Anypsa</a></li>
+                            <li><a href="producto.php?c6=Linea Epoxica&c7=Aurora" class="milinea2">Aurora</a></li>
+                            <li><a href="producto.php?c6=Linea Epoxica&c7=Chemifabrik" class="milinea2">Chemifabrik</a></li>
+                            <li><a href="producto.php?c6=Linea Epoxica&c7=Interpaints" class="milinea2">Interpaints</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="milinea">Solventes<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg></a>
+                      <ul class="milinea2">
+                        <li><a href="producto.php?c6=Solventes&c7=Qroma" class="milinea2">Qroma</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=Anypsa" class="milinea2">Anypsa</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=Aurora" class="milinea2">Aurora</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=Interpaint" class="milinea2">Interpaint</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=Chema" class="milinea2">Chema</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=Chem tools" class="milinea2">Chem tools</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=Chemifabrik" class="milinea2">Chemifabrik</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=CMC" class="milinea2">CMC</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=Felsa" class="milinea2"> Felsa</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=Suarez" class="milinea2">Suarez</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=A3M" class="milinea2">A3M</a></li>
+                        <li><a href="producto.php?c6=Solventes&c7=Worzal" class="milinea2">Worzal</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="milinea">Pegamentos<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg></a>
+                      <ul class="milinea2">
+                        <li><a href="producto.php?c6=Pegamentos&c7=Qroma" class="milinea2">Qroma</a></li>
+                        <li><a href="producto.php?c6=Pegamentos&c7=Anypsa" class="milinea2">Anypsa</a></li>
+                        <li><a href="producto.php?c6=Pegamentos&c7=Chema" class="milinea2">Chema</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#" class="milinea">Accesorios<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                      <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg></a>
+                      <ul class="milinea2">
+                        <li><a href="#" style="display: flex;"  class="milinea2">Abrasivos <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
+                          <ul>
+                            <li><a href="producto.php?c6=Abrasivos&c7=ASA" class="milinea2">ASA</a></li>
+                            <li><a href="producto.php?c6=Abrasivos&c7=3M" class="milinea2">3M</a></li>
+                            <li><a href="producto.php?c6=Abrasivos&c7=Abralit" class="milinea2">Abralit</a></li>
+                            <li><a href="producto.php?c6=Abrasivos&c7=Zulkar" class="milinea2">Zulkar</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#" style="display: flex;"  class="milinea2">Herramientas y otros <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-md-none d-block bi bi-caret-right-fill" viewBox="0 0 16 16">
+                          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg></a>
+                          <ul>
+                            <li><a href="producto.php?c6=Herramientas y otros&c7=Brochas" class="milinea2">Brochas</a></li>
+                            <li><a href="producto.php?c6=Herramientas y otros&c7=Espatulas" class="milinea2">Espatulas</a></li>
+                            <li><a href="producto.php?c6=Herramientas y otros&c7=Extensiones" class="milinea2">Extensiones</a></li>
+                            <li><a href="producto.php?c6=Herramientas y otros&c7=Rodillos" class="milinea2">Rodillos</a></li>
+                          </ul></li>
+                        <li><a href="producto.php?c6=Productos para el hogar&c7=Sin marca"  class="milinea2" style="display: flex;">Productos para el hogar</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>  
+          </nav>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuItems = document.querySelectorAll("#menu li");
+            menuItems.forEach(function(menuItem) {
+                menuItem.addEventListener("click", function(event) {
+                    var subMenu = this.querySelector("ul");
+                    if (subMenu) {
+                        event.preventDefault();
+                        if (subMenu.style.display === "block") {
+                            subMenu.style.display = "none";
+                        } else {
+                            subMenu.style.display = "block";
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <div class="p-2 d-block d-md-none  search-label w-100" id="searchlabel">                
+        <input  type="text" name="searchInput2" id="searchInput2" oninput="searchProducts2()" class="form-control search-input " style="border:1px solid #e2e2e2;background-color: #e2e2e2;border-radius:30px ;padding:5px;text-indent: 15px;" placeholder="Buscar productos ...">
+        <span class="search-icon2 p-1" id="eee1" style="text-align: center;" onmouseout="cambiarColor2()" onmouseover="cambiarColor()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+        </span>
+        <div class="w-100 p-1">
+            <div class="m-auto w-100">
+                <div class="m-auto w-75" style="position: absolute;z-index: 3; text-decoration: none; background-color: white;" >
+                    <div id="searchResults2" class="search-results2" ></div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!--
+
+    <div class="p-2 mb-1" style="font-family: 'Montserrat';background-color:#4ec3da; color:white; text-align:center; border-top: 0px solid white">
+        <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+            </svg>
+        </span>	   
+        <a href="portwhatsapp.php"><strong style="font-size: 10pt;color:white"> Ventas por WhatsApp: 940 168 122 - 963 292 383</strong> </a> 
+    </div> -->
+</header>
